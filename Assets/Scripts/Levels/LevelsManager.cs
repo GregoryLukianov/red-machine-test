@@ -6,22 +6,31 @@ namespace Levels
 {
     public class LevelsManager : DontDestroyMonoBehaviour
     {
-        private const string LevelNamePattern = "Level{0}";
+        // закоментировано для тестов
+        //private const string LevelNamePattern = "Level{0}";
+        
 
         private int _currentLevelIndex;
 
 
         private void Start()
         {
-            ScenesChanger.GotoScene(string.Format(LevelNamePattern, _currentLevelIndex));
-
+            // закоментировано для тестов
+            //ScenesChanger.GotoScene(string.Format(LevelNamePattern, _currentLevelIndex));
+            
+            //тест
+            ScenesChanger.GotoScene("CameraMovementTestLevel");
             EventsController.Subscribe<EventModels.Game.TargetColorNodesFilled>(this, OnTargetColorNodesFilled);
         }
 
         private void OnTargetColorNodesFilled(EventModels.Game.TargetColorNodesFilled e)
         {
-            _currentLevelIndex += 1;
-            ScenesChanger.GotoScene(string.Format(LevelNamePattern, _currentLevelIndex));
+            // закоментировано для тестов
+            //_currentLevelIndex += 1;
+            //ScenesChanger.GotoScene(string.Format(LevelNamePattern, _currentLevelIndex));
+            
+            //тест
+            ScenesChanger.GotoScene("CameraMovementTestLevel");
         }
     }
 }
